@@ -8,10 +8,6 @@ use Utils;
 my @lines = readFile("Day1.txt");
 my $length = @lines;
 
-# foreach (@lines) {
-#     print "$_\n";
-# }
-
 my $increases = 0;
 
 for (my $i = 1; $i < $length; $i = $i + 1){
