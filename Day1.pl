@@ -20,8 +20,9 @@ for (my $i = 1; $i < $length; $i = $i + 1){
     }
 }
 
-print ("$increases \n");
+print ("Part 1: $increases \n");
 
+# attempt 1 (no thinking)
 my $windowIncreases = 0;
 my @windowMeasurements = ();
 for (my $i = 2; $i < $length; $i = $i + 1){
@@ -35,4 +36,16 @@ for (my $i = 1; $i < @windowMeasurements; $i = $i + 1){
     }
 }
 
-print ("$windowIncreases \n");
+print ("Part 2 (no thinking) $windowIncreases \n");
+
+# attempt 2
+$windowIncreases = 0;
+for (my $i = 3; $i < $length; $i = $i + 1){
+    my $first = $lines[$i-3] + $lines[$i-2] + $lines[$i-1];
+    my $second = $lines[$i-2] + $lines[$i-1] + $lines[$i];
+    if ($second > $first){
+        $windowIncreases = $windowIncreases + 1;
+    }
+}
+
+print ("Part 2 (thinking) $windowIncreases \n");
