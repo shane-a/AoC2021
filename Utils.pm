@@ -15,6 +15,7 @@ sub readFile {
         return; 
     }
     else {
+        local $/ = "\r\n";
         open my $handle, '<', $_[0];
         chomp(my @lines = <$handle>);
         close $handle;
